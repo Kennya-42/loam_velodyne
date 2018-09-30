@@ -170,7 +170,7 @@ bool LaserMapping::setup(ros::NodeHandle& node, ros::NodeHandle& privateNode)
       ("/velodyne_cloud_3", 2, &LaserMapping::laserCloudFullResHandler, this);
 
    // subscribe to IMU topic
-   _subImu = node.subscribe<sensor_msgs::Imu>("/imu/data", 50, &LaserMapping::imuHandler, this);
+   _subImu = node.subscribe<sensor_msgs::Imu>("/vectornav/IMU", 50, &LaserMapping::imuHandler, this);
 
    return true;
 }
